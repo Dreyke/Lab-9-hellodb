@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <!-- Milligram stylesheet -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>All Tasks</title>
+</head>
+<body>
+
+<h1>All Tasks</h1>
+
+<h2 th:text="${tasks.size() } + 'task(s) to do' ">Tasks to do</h2>
+
+<ul>
+    <li th:each="task : ${tasks}">
+        <span th:if="${task.urgent}"><img class="urgent-icon" src="img/urgent.png"></span>
+        <span th:text="${task.text}"></span>
+    </li>
+</ul>
+
+<a href="/">Add a new task</a>
+
+</body>
+</html>

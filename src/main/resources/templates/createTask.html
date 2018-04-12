@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <!-- Milligram stylesheet -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+    <title>Create Tasks</title>
+</head>
+<body>
+
+<h1>Enter a task</h1>
+
+<form action="#" method="POST" th:action="@{/addTask}" th:object="${task}">
+    <input type="text" placeholder="task description" th:field="*{text}" />
+    Urgent? <input type="checkbox" th:field="*{urgent}" />
+    <br>
+    <button id="add-task">Add Task</button>
+
+</form>
+
+<a href="/allTasks">All Tasks</a>
+
+</body>
+</html>

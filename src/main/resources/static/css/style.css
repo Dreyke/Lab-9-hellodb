@@ -1,0 +1,15 @@
+body {
+    padding: 3rem;
+}
+
+img.urgent-icon {
+    height: 1.5rem;
+}
+
+li {
+    min-height: 2rem;
+}
+
+li > * {
+    vertical-align: text-top;
+}
